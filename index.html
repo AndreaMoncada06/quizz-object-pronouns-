@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Trivia Game</title>
+    <link rel="stylesheet" href="estilos.css">
+</head>
+<body>
+
+    <!-- Pantalla de inicio -->
+    <div id="start-screen">
+    <h1 class="title-big">TRIVIA GAME!</h1>
+    <h2 class="title-small">Object Pronouns</h2>
+    <img id="start-btn" src="img/boton-iniciar.png" alt="Botón Iniciar">
+    </div>
+
+    <!-- Pantalla del juego -->
+    <div id="quiz-screen" style="display:none;">
+        <!-- Barra de progreso -->
+        <div id="progress-bar">1/10</div>
+        <div id="question-container">
+            <p id="question">Aquí irá la pregunta</p>
+            <div id="options"></div>
+        </div>
+
+        <!-- Contenedor para mostrar explicaciones -->
+        <div id="explanation"></div>
+
+        <!-- Marcador -->
+        <p id="score">Puntaje: 0</p>
+
+        <!-- Botón para siguiente -->
+        <button id="next-btn" style="display:none;">Siguiente</button>
+    </div>
+
+    <!-- Pantalla de resultados -->
+    <!-- Pantalla de resultados -->
+    <div id="result-screen" style="display:none;">
+        <h2 id="final-message">GOOD JOB!</h2>
+        <p class="label-score">Your score:</p>
+        <p id="final-score">0/10</p>
+        <button id="restart-btn">Reiniciar</button>
+    </div>
+
+    <!-- Script con la lógica -->
+    <script src="/script.js" defer></script>
+</body>
+</html>

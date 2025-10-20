@@ -1,0 +1,383 @@
+/* ===== Fuente retro arcade ===== */
+@import url('https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap');
+
+/* ===== RESET GENERAL ===== */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+/* El body debe ocupar toda la pantalla sin márgenes */
+body {
+  margin: 0;
+  padding: 0;
+  width: 100%;
+  height: 100vh;
+  overflow: hidden; /* evita scroll innecesario */
+}
+
+/* ===== PANTALLA DE INICIO ===== */
+#start-screen {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;   /* centra vertical */
+  align-items: center;       /* centra horizontal */
+  height: 100vh;             /* ocupa toda la pantalla */
+  text-align: center;
+  background-image: url('../img/fondo-inicio.png'); /* ruta relativa a tu carpeta img */
+  background-size: cover;    /* que cubra toda la pantalla */
+  background-position: center;
+  background-repeat: no-repeat;
+  color: white;
+  font-family: 'Press Start 2P', cursive; /* fuente retro arcade */
+}
+
+/* ===== Títulos ===== */
+.title-big {
+  font-size: 100px;              /* mucho más grande */
+  margin-bottom: 10px;
+  text-shadow: 4px 4px 0px #2f3b8e;
+  animation: wiggle 1s infinite ease-in-out;
+}
+/* Definición de la animación */
+@keyframes wiggle {
+  0%, 100% { transform: translate(0, 0); }
+  25% { transform: translate(2px, -2px); }
+  50% { transform: translate(-2px, 2px); }
+  75% { transform: translate(2px, 2px); }
+}
+
+.title-small {
+  font-size: 50px;              /* más pequeño */
+  margin-bottom: 40px;          /* espacio antes del botón */
+  text-shadow: 3px 3px 0px #2f3b8e;
+}
+
+/* Imagen-botón estilo arcade */
+#start-btn {
+    width: 150px;             /* ajusta al tamaño que quieras */
+    cursor: pointer;          /* cambia cursor al pasar */
+    image-rendering: pixelated; /* mantiene el estilo 8-bit */
+    transition: transform 0.2s ease-in-out;
+}
+
+/* Efecto hover (subir un poquito) */
+#start-btn:hover {
+  transform: translateY(-5px);
+}
+
+/* ===== PANTALLA DE PREGUNTAS ===== */
+#quiz-screen {
+  display: none;
+  flex-direction: column;
+  align-items: center;
+  justify-content: flex-start;
+  padding-top: 60px;
+  height: 100vh;
+  padding: 30px;
+  background-image: url('../img/fondo-preguntas.png'); /* fondo arcade para preguntas */
+  background-size: cover;
+  background-position: center;
+  color: white;
+  font-family: 'Press Start 2P', cursive;
+  text-align: center;
+}
+
+/* Pregunta */
+#question {
+  font-size: 28px;                  /* más grande */
+  margin: 40px 0 30px 0;            /* espacio arriba y abajo */
+  text-shadow: 2px 2px 0px black;
+  max-width: 80%;
+  text-align: center;               /* 👈 centra el texto */
+  line-height: 1.5;                 /* mejora la separación entre líneas */
+  display: flex;                    
+  justify-content: center;          /* 👈 centra contenido si ocupa varias líneas */
+}
+
+/* Contenedor de opciones */
+#options {
+  display: flex;
+  flex-direction: column;
+  align-items: center;   /* centra horizontalmente */
+  gap: 15px;
+  margin-bottom: 20px;
+}
+/* Botones de opciones */
+.option-btn {
+  background: #00ccff;
+  border: 4px solid black;
+  padding: 12px 20px;
+  width: 250px;              /* 👈 ancho fijo */
+  border-radius: 30px;       /* píldora retro */
+  font-family: 'Press Start 2P', cursive;
+  font-size: 14px;
+  color: black;
+  cursor: pointer;
+  box-shadow: 4px 4px 0px black;
+  image-rendering: pixelated;
+  transition: transform 0.2s ease-in-out, background 0.2s;
+  text-align: center;
+}
+.option-btn:hover {
+  background: #5a8cff;
+  transform: translateY(-3px);
+}
+
+/* Explicación */
+#explanation {
+  font-size: 16px;
+  margin-top: 20px;
+  padding: 10px;
+  min-height: 50px;              /* espacio fijo */
+  max-width: 80%;                /* 👈 no pasa de este ancho */
+  text-align: center;            /* 👈 centra el texto */
+  line-height: 1.5;              /* espacio entre líneas */
+  word-wrap: break-word;         /* evita que se desborde */
+  margin-left: auto;             /* centra el bloque */
+  margin-right: auto;            /* centra el bloque */
+}
+
+/* Correcto / Incorrecto (se puede añadir desde JS con clases extra) */
+.correct {
+  color: #63c442;
+  font-size: 20px;
+}
+.wrong {
+  color: #d70400;
+  font-size: 20px;
+}
+
+/* Puntaje */
+#score {
+  margin-top: 16px; /* lo empuja hacia abajo */
+  font-size: 14px;
+  text-shadow: 2px 2px 0px black;
+}
+
+/* Botón siguiente */
+#next-btn {
+  margin-top: 10px;
+  background: #ff66cc;
+  border: 4px solid black;
+  padding: 10px 20px;
+  font-family: 'Press Start 2P', cursive;
+  font-size: 14px;
+  cursor: pointer;
+  box-shadow: 4px 4px 0px black;
+  transition: 0.2s;
+  margin-bottom: 40px;
+}
+
+#next-btn:hover {
+  background: #66ff66;
+  transform: translateY(-3px);
+}
+/* ===== Barra de progreso ===== */
+/* ===== Barra de progreso (contenedor) ===== */
+#progress-bar {
+  position: relative;
+  width: 80%;
+  height: 25px;
+  background: #333;
+  border: 4px solid #ab1d8c;
+  box-shadow: 4px 4px 0px #ab1d8c;
+  border-radius: 20px;
+  overflow: hidden;
+  margin: 20px auto;
+}
+
+/* ===== Barra interna que se llena ===== */
+#progress-fill {
+  height: 100%;
+  width: 0%;
+  background: linear-gradient(90deg, #ff66cc, #00ccff);
+  transition: width 0.5s ease-in-out;
+}
+
+/* ===== Texto del progreso encima ===== */
+#progress-text {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  color: white;
+  font-family: 'Press Start 2P', cursive;
+  font-size: 14px;
+  text-shadow: 2px 2px 0px black;
+}
+
+/* ===== PANTALLA DE RESULTADOS ===== */
+#result-screen {
+  display: none;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  height: 100vh;
+  width: 100%;
+  font-family: 'Press Start 2P', cursive;
+  color: white;
+  background-image: url('../img/fondo-resultados-pc.png'); /* fondo para PC */
+  background-size: cover;
+  background-position: center bottom;
+  background-repeat: no-repeat;
+}
+
+/* Fondo alternativo para móviles */
+@media (max-width: 768px) {
+  #result-screen {
+    background-image: url('../img/fondo-resultados-movil.png'); /* fondo adaptado al celular */
+    background-size: cover;
+    background-position: center;
+  }
+}
+
+/* Título grande tipo arcade */
+#final-message {
+  font-size: 60px;
+  margin-bottom: 20px;
+  text-shadow: 4px 4px 0px #2f3b8e;
+}
+
+/* Texto "Your score:" */
+#result-screen p {
+  font-size: 20px;
+  margin-bottom: 10px;
+  text-shadow: 2px 2px 0px black;
+}
+
+/* Puntuación (el número verde con forma de botón) */
+#final-score {
+  background: #00cc66;
+  border: 4px solid black;
+  border-radius: 50px;
+  padding: 10px 25px;
+  font-size: 22px;
+  color: white;
+  box-shadow: 4px 4px 0px #2f3b8e;
+  display: inline-block;
+}
+
+/* Botón Reiniciar */
+#restart-btn {
+  margin-top: 25px;
+  background: #00ccff;
+  border: 4px solid black;
+  border-radius: 50px;
+  padding: 10px 25px;
+  font-family: 'Press Start 2P', cursive;
+  font-size: 16px;
+  color: black;
+  cursor: pointer;
+  box-shadow: 4px 4px 0px black;
+  transition: transform 0.2s ease;
+}
+
+#restart-btn:hover {
+  transform: translateY(-4px);
+  background: #ffcc00;
+}
+
+/* ======= 📱 Diseño Responsive ======= */
+@media (max-width: 768px) {
+  .title-big {
+    font-size: 60px; /* más pequeño para pantallas medianas */
+  }
+
+  .title-small {
+    font-size: 30px;
+  }
+
+  #question {
+    font-size: 16px;
+    max-width: 90%;
+  }
+
+  .option-btn {
+    width: 250px;
+    font-size: 12px;
+    padding: 10px 15px;
+  }
+
+  #score {
+    font-size: 12px;
+  }
+
+  #next-btn, #restart-btn {
+    font-size: 12px;
+    padding: 8px 16px;
+  }
+}
+
+/* ======= 📱 Pantallas pequeñas (celulares) ======= */
+@media (max-width: 480px) {
+  .title-big {
+    font-size: 40px;
+  }
+
+  .title-small {
+    font-size: 22px;
+  }
+
+  #question {
+    font-size: 14px;
+  }
+
+  .option-btn {
+    width: 200px;
+    padding: 8px 10px;
+  }
+
+  #score {
+    font-size: 10px;
+  }
+
+  #next-btn, #restart-btn {
+    font-size: 10px;
+    padding: 6px 12px;
+  }
+}
+/* Fondo por defecto (computador o pantallas grandes) */
+#start-screen {
+  background-image: url('../img/fondo-inicio-pc.png');
+  background-size: cover;
+  background-position: center;
+}
+
+/* Fondo del quiz (computador) */
+#quiz-screen {
+  background-image: url('../img/fondo-preguntas-pc.png');
+  background-size: cover;
+  background-position: center;
+}
+
+/* Fondo de resultados (computador) */
+#result-screen {
+  background-image: url('../img/fondo-resultados-pc.png');
+  background-size: cover;
+  background-position: center;
+}
+
+/* 🎮 Para pantallas de celular (verticales o menores a 768px) */
+@media screen and (max-width: 768px) {
+
+  #start-screen {
+    background-image: url('../img/fondo-inicio-movil.png');
+    background-size: cover;
+    background-position: center;
+  }
+
+  #quiz-screen {
+    background-image: url('../img/fondo-preguntas-movil.png');
+    background-size: cover;
+    background-position: center;
+  }
+
+  #result-screen {
+    background-image: url('../img/fondo-resultados-movil.png');
+    background-size: cover;
+    background-position: center;
+  }
+}
