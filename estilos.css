@@ -25,7 +25,7 @@ body {
   align-items: center;       /* centra horizontal */
   height: 100vh;             /* ocupa toda la pantalla */
   text-align: center;
-  background-image: url('../fondo-inicio.png'); /* ruta relativa a tu carpeta img */
+  background-image: url('img/fondo-inicio.png'); /* ruta relativa a tu carpeta img */
   background-size: cover;    /* que cubra toda la pantalla */
   background-position: center;
   background-repeat: no-repeat;
@@ -76,7 +76,7 @@ body {
   padding-top: 60px;
   height: 100vh;
   padding: 30px;
-  background-image: url('../fondo-preguntas.png'); /* fondo arcade para preguntas */
+  background-image: url('img/fondo-preguntas.png'); /* fondo arcade para preguntas */
   background-size: cover;
   background-position: center;
   color: white;
@@ -219,7 +219,7 @@ body {
   width: 100%;
   font-family: 'Press Start 2P', cursive;
   color: white;
-  background-image: url('../fondo-resultados-pc.png'); /* fondo para PC */
+  background-image: url('img/fondo-resultados-pc.png'); /* fondo para PC */
   background-size: cover;
   background-position: center bottom;
   background-repeat: no-repeat;
@@ -228,7 +228,7 @@ body {
 /* Fondo alternativo para móviles */
 @media (max-width: 768px) {
   #result-screen {
-    background-image: url('../fondo-resultados-movil.png'); /* fondo adaptado al celular */
+    background-image: url('img/fondo-resultados-movil.png'); /* fondo adaptado al celular */
     background-size: cover;
     background-position: center;
   }
@@ -341,21 +341,21 @@ body {
 }
 /* Fondo por defecto (computador o pantallas grandes) */
 #start-screen {
-  background-image: url('../fondo-inicio-pc.png');
+  background-image: url('img/fondo-inicio-pc.png');
   background-size: cover;
   background-position: center;
 }
 
 /* Fondo del quiz (computador) */
 #quiz-screen {
-  background-image: url('../fondo-preguntas-pc.png');
+  background-image: url('img/fondo-preguntas-pc.png');
   background-size: cover;
   background-position: center;
 }
 
 /* Fondo de resultados (computador) */
 #result-screen {
-  background-image: url('../fondo-resultados-pc.png');
+  background-image: url('img/fondo-resultados-pc.png');
   background-size: cover;
   background-position: center;
 }
@@ -364,21 +364,22 @@ body {
 @media screen and (max-width: 768px) {
 
   #start-screen {
-    background-image: url('../fondo-inicio-movil.png');
+    background-image: url('img/fondo-inicio-movil.png');
     background-size: cover;
     background-position: center;
   }
 
   #quiz-screen {
-    background-image: url('../fondo-preguntas-movil.png');
+    background-image: url('img/fondo-preguntas-movil.png');
     background-size: cover;
     background-position: center;
   }
 
   #result-screen {
-    background-image: url('../fondo-resultados-movil.png');
+    background-image: url('img/fondo-resultados-movil.png');
     background-size: cover;
     background-position: center;
   }
 }
+
 
