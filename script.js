@@ -6,61 +6,61 @@ const questions = [
         text: "Peter is very kind. Everyone likes ___.",
         options: ["he", "him", "his"],
         correct: "him",
-        explanation: "La respuesta correcta es 'him' porque es el pronombre objeto de 'he'."
+        explanation: "The correct answer is 'him' because it is the object pronoun of 'he'."
     },
     {
         text: "I know ___.",
         options: ["she", "her", "hers"],
         correct: "her",
-        explanation: "La respuesta correcta es 'her' porque es el pronombre objeto de 'she'."
+        explanation: "The correct answer is 'her' because it is the object pronoun of 'she'."
     },
     {
         text: "We are going to visit ___.",
         options: ["they", "them", "their"],
         correct: "them",
-        explanation: "La respuesta correcta es 'them' porque es el pronombre objeto de 'they'."
+        explanation: "The correct answer is 'them' because it is the object pronoun of 'they'."
     },
     {
         text: "This is my phone. Please give it back to ___.",
         options: ["me", "them", "its"],
         correct: "me",
-        explanation: "La respuesta correcta es 'me' porque es el pronombre objeto de 'I'."
+        explanation: "The correct answer is 'me' because it is the object pronoun of 'I'."
     },
     {
         text:"I love my parents. I always visit ___.",
         options: ["they", "them", "their"],
         correct: "them",
-        explanation: "La respuesta correcta es 'them' porque es el pronombre objeto de 'they'."
+        explanation: "The correct answer is 'them' because it is the object pronoun of 'they'."
     },
     {
         text: "This is Sarah. Do you know ___?",
         options: ["she", "hers", "her"],
         correct: "her",
-        explanation: "La respuesta correcta es 'her' porque es el pronombre objeto de 'she'."
+        explanation: "The correct answer is 'her' because it is the object pronoun of 'she'."
     },
     {
         text: "We are very hungry. Can you cook for ___?",
         options: ["we", "our", "us"],
         correct: "us",
-        explanation: "La respuesta correcta es 'us' porque es el pronombre objeto de 'we'."
+        explanation: "The correct answer is 'us' because it is the object pronoun of 'we'."
     },
     {
         text: "I like my teacher. I always listen to ___.",
         options: ["him", "his", "he"],
         correct: "him",
-        explanation: "La respuesta correcta es 'him' porque es el pronombre objeto de 'he'."
+        explanation: "The correct answer is 'him' because it is the object pronoun of 'he'."
     },
     {
         text: "This is my dog. I really like ___.",
         options: ["it", "its", "they"],
         correct: "it",
-        explanation: "La respuesta correcta es 'it' porque es el pronombre objeto que usamos para cosas o animales."
+        explanation: "The correct answer is 'it' because it is the object pronoun we use for things or animals."
     },
     {
         text: "They are my friends. Do you know ___.",
         options: ["they", "them", "their"],
         correct: "them",
-        explanation: "La respuesta correcta es 'them' porque es el pronombre objeto de 'they'."
+        explanation: "The correct answer is 'them' because it is the object pronoun of 'they'."
     }
 ];
 
@@ -195,3 +195,4 @@ restartBtn.addEventListener("click", () => {
     resultScreen.style.display = "none";
     startScreen.style.display = "flex";     
 });
+
